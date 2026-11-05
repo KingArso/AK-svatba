@@ -12,6 +12,10 @@
   --serif: Georgia, "Times New Roman", serif;
   --sans: "Helvetica Neue", Arial, sans-serif;
   --wrap: 1160px;
+  --dress-sage: #92966f;
+  --dress-butter: #ffefc3;
+  --dress-azure: #cddfe9;
+  --dress-navy: #404d77;
 }
 * {
   box-sizing: border-box;
@@ -19,6 +23,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  scrollbar-gutter: stable;
 }
 body {
   margin: 0;
@@ -212,6 +217,108 @@ svg {
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+/* Vektorové ikony mají stejný vzhled na iOS, Androidu i počítači. */
+.icon-library {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.icon {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -0.2em;
+}
+.little-star .icon {
+  width: 23px;
+  height: 23px;
+}
+.drawn-heart .icon,
+.ceremony-heart .icon {
+  width: 42px;
+  height: 42px;
+  stroke-width: 1;
+}
+.date-ribbon .icon {
+  width: 20px;
+  height: 20px;
+}
+.footer-love .icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+.inline-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.inline-link:hover {
+  color: var(--ink);
+}
+
+.countdown {
+  max-width: 370px;
+  margin-top: 27px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+.countdown-caption {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.countdown-caption em {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+.countdown-units {
+  display: grid;
+  grid-template-columns: 1.25fr repeat(3, 1fr);
+  margin-top: 11px;
+  gap: 14px;
+}
+.countdown-units > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.countdown-units > div + div::before {
+  content: ":";
+  position: absolute;
+  left: -12px;
+  top: -1px;
+  color: #9ba58c;
+  font: 24px var(--serif);
+}
+.countdown-units [data-countdown] {
+  font: 34px/1 var(--serif);
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -1px;
+}
+.countdown-units > div > span:last-child {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--muted);
+}
+.countdown.is-complete .countdown-units {
+  opacity: 0.5;
+}
+.hero .countdown + .hero-footnote {
+  margin-top: 18px;
 }
 
 .site-header {
@@ -750,62 +857,84 @@ svg {
   display: block;
   width: 70px;
   height: 77px;
-  border: 1px solid #0000000a;
+  position: relative;
+  z-index: 21;
+  border: 0;
   border-radius: 48% 48% 43% 43%;
   transform: rotate(-8deg);
 }
 .swatch.sage {
-  background: #a5b499;
+  background: var(--dress-sage);
 }
 .swatch.butter {
-  background: #f0e2a5;
+  background: var(--dress-butter);
   transform: rotate(6deg);
 }
 .swatch.azure {
-  background: #c1d9e3;
+  background: var(--dress-azure);
   transform: rotate(-3deg);
 }
 .swatch.navy {
-  background: #344d68;
+  background: var(--dress-navy);
   transform: rotate(8deg);
 }
 
+/* Kompaktní FAQ: nadpis nad dvěma sloupci, jedna otevřená odpověď. */
 .faq-section {
-  padding-top: 99px;
-  padding-bottom: 100px;
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+.faq-intro {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 90px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 40px;
+  align-items: end;
+  margin-bottom: 27px;
+}
+.faq-intro .eyebrow {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+.faq-intro h2 {
+  font-size: 39px;
+  letter-spacing: -1.5px;
 }
 .faq-intro > p:not(.eyebrow) {
-  max-width: 240px;
-  margin-top: 23px;
+  max-width: 350px;
+  margin: 0;
   font-size: 12px;
   color: var(--muted);
 }
-.faq-list details {
-  border-bottom: 1px solid var(--line);
-}
-.faq-list details:first-child {
+.faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 36px;
   border-top: 1px solid var(--line);
+  align-items: start;
+}
+.faq-list details {
+  min-width: 0;
+  border-bottom: 1px solid var(--line);
 }
 .faq-list summary {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   align-items: center;
   cursor: pointer;
   list-style: none;
-  padding: 23px 0;
-  font-size: 13px;
+  padding: 18px 0;
+  font-size: 12px;
+  min-height: 64px;
+  line-height: 1.6;
 }
 .faq-list summary::-webkit-details-marker {
   display: none;
 }
 .faq-list summary > span {
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 1;
+  display: flex;
+  flex: 0 0 20px;
+  align-items: center;
   transition: transform 0.2s;
 }
 .faq-list details[open] summary > span {
@@ -814,8 +943,7 @@ svg {
 .faq-list details > p {
   font-size: 12px;
   color: var(--muted);
-  padding: 0 35px 23px 0;
-  max-width: 500px;
+  padding: 0 24px 19px 0;
 }
 .rsvp-section {
   padding: 82px 0 86px;
@@ -824,14 +952,14 @@ svg {
 }
 .rsvp-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   gap: 85px;
   align-items: start;
 }
 .rsvp-copy {
   padding-top: 23px;
-  position: sticky;
-  top: 55px;
+  position: static;
+  min-width: 0;
 }
 .rsvp-copy h2 {
   font-size: clamp(45px, 4.7vw, 65px);
@@ -1032,8 +1160,12 @@ svg {
   text-align: center;
 }
 .success-mark {
-  font: 80px var(--serif);
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
   color: #889b77;
+  stroke-width: 1.5;
 }
 .form-success h3 {
   font-size: 44px;
@@ -1050,6 +1182,210 @@ svg {
 }
 .form-success button {
   margin-top: 35px;
+}
+
+.celebration-open {
+  overflow: hidden;
+}
+.celebration {
+  width: min(430px, calc(100% - 36px));
+  max-height: calc(100vh - 36px);
+  max-height: calc(100dvh - 36px);
+  margin: auto;
+  padding: 36px 28px 32px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid #bcc5b0;
+  border-radius: 9px;
+  text-align: center;
+  box-shadow: 0 24px 100px #17281b35;
+}
+.celebration::backdrop {
+  background: #20392b66;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.celebration-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+}
+.celebration-art {
+  width: 132px;
+  margin: 0 auto 18px;
+}
+.beer-morph {
+  width: 100%;
+  overflow: visible;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.celebration-halo {
+  fill: var(--sage);
+  stroke: none;
+}
+.celebration-check {
+  opacity: 0;
+  stroke-width: 4;
+  transform-origin: 60px 65px;
+}
+.celebration-beer {
+  transform-origin: 60px 78px;
+}
+.beer-handle {
+  stroke-width: 7;
+}
+.beer-glass {
+  fill: #f9efcc;
+}
+.beer-fill {
+  fill: #dcad43;
+  stroke: none;
+}
+.beer-foam {
+  fill: #fffdf4;
+}
+.beer-shine {
+  stroke: #fff4c8;
+  stroke-width: 3;
+}
+.beer-sparks {
+  stroke: #92966f;
+  stroke-width: 1.5;
+}
+.celebration .eyebrow {
+  font-size: 9px;
+  margin-bottom: 15px;
+}
+.celebration h2 {
+  font-size: clamp(30px, 7vw, 43px);
+  line-height: 1.09;
+  letter-spacing: -1px;
+}
+.celebration h2 em {
+  font-weight: 400;
+  color: #778267;
+}
+.celebration > p:not(.eyebrow) {
+  font-size: 12px;
+  max-width: 250px;
+  margin: 20px auto 0;
+}
+.celebration-dismiss {
+  width: 100%;
+  margin-top: 25px;
+  justify-content: center;
+  gap: 22px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .is-celebrating > main,
+  .is-celebrating > .site-header,
+  .is-celebrating > .site-footer {
+    animation: page-cheers 0.4s ease-in-out;
+  }
+  .celebration[open] {
+    animation: celebration-in 0.38s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .celebration[open]::backdrop {
+    animation: backdrop-in 0.25s ease both;
+  }
+  .celebration[open] .celebration-check {
+    stroke-dasharray: 90;
+    animation: check-to-beer 1s 0.18s ease both;
+  }
+  .celebration[open] .celebration-beer {
+    animation: beer-arrives 0.65s 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  }
+  .celebration[open] .beer-sparks {
+    transform-origin: 60px 65px;
+    animation: sparks-arrive 0.7s 1s ease both;
+  }
+  @keyframes page-cheers {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20%,
+    60% {
+      transform: translateX(-3px) rotate(-0.1deg);
+    }
+    40%,
+    80% {
+      transform: translateX(3px) rotate(0.1deg);
+    }
+  }
+  @keyframes celebration-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(0.94);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  @keyframes backdrop-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes check-to-beer {
+    0% {
+      opacity: 1;
+      stroke-dashoffset: 90;
+      transform: scale(0.8);
+    }
+    40%,
+    70% {
+      opacity: 1;
+      stroke-dashoffset: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      stroke-dashoffset: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+  }
+  @keyframes beer-arrives {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.5);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(-2px) scale(1.06);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  @keyframes sparks-arrive {
+    from {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 .contacts {
   padding-top: 75px;
@@ -1508,7 +1844,7 @@ svg {
   }
   .rsvp-grid {
     gap: 30px;
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .rsvp-copy h2 {
     font-size: 43px;
@@ -2215,6 +2551,77 @@ svg {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+/* Formulář dostane vlastní řádek ještě předtím, než začnou být sloupce těsné. */
+@media (max-width: 850px) {
+  .rsvp-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+  .rsvp-copy {
+    position: static;
+    padding-top: 0;
+  }
+  .rsvp-copy > p:not(.eyebrow) {
+    max-width: 440px;
+  }
+  .rsvp-flower {
+    display: none;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+  .form-panel {
+    width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .faq-section {
+    display: block;
+    padding-block: 46px;
+  }
+  .faq-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .faq-intro .eyebrow {
+    margin: 0;
+  }
+  .faq-intro > p:not(.eyebrow) {
+    margin: 0;
+    max-width: 340px;
+  }
+  .faq-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .faq-list summary {
+    min-height: 59px;
+    padding-block: 15px;
+  }
+  .countdown {
+    max-width: 330px;
+    margin-top: 25px;
+    padding-top: 16px;
+  }
+  .countdown-units [data-countdown] {
+    font-size: 33px;
+  }
+  .form-panel .attendance-options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .attendance-options label > span {
+    font-size: 12px;
+  }
+  .celebration {
+    padding: 32px 23px 25px;
+  }
+  .celebration-art {
+    width: 118px;
+    margin-bottom: 15px;
   }
 }
 @media print {

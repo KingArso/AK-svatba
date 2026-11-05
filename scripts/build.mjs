@@ -1,6 +1,8 @@
-import { cp, mkdir, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import { wedding } from "../site.config.js";
 
+// Výstup je vždy znovu sestavený, aby v něm nezůstávaly staré fotografie.
+await rm("dist", { recursive: true, force: true });
 await mkdir("dist", { recursive: true });
 for (const file of [
   "index.html",

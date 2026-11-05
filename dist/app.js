@@ -34,6 +34,97 @@ document.addEventListener("keydown", (event) => {
 });
 window.matchMedia("(min-width: 561px)").addEventListener("change", closeMenu);
 
+// Po návratu na kartu se čas znovu počítá podle hodin, ne podle počtu ticků.
+const countdown = document.querySelector("#wedding-countdown");
+const ceremonyTime = new Date(wedding.date).getTime();
+let countdownTimer;
+function updateCountdown() {
+  clearTimeout(countdownTimer);
+  if (!Number.isFinite(ceremonyTime)) return;
+  const remaining = Math.max(0, Math.ceil((ceremonyTime - Date.now()) / 1000));
+  const values = {
+    days: Math.floor(remaining / 86400),
+    hours: Math.floor((remaining % 86400) / 3600),
+    minutes: Math.floor((remaining % 3600) / 60),
+    seconds: remaining % 60,
+  };
+  for (const [unit, value] of Object.entries(values)) {
+    const element = countdown.querySelector(`[data-countdown="${unit}"]`);
+    const text = String(value).padStart(unit === "days" ? 3 : 2, "0");
+    if (element.textContent !== text) element.textContent = text;
+  }
+  countdown.hidden = false;
+  countdown.setAttribute(
+    "aria-label",
+    remaining > 0
+      ? `Do obřadu zbývá ${values.days} dní, ${values.hours} hodin, ${values.minutes} minut a ${values.seconds} sekund.`
+      : "Dočkali jsme se našeho ANO.",
+  );
+  if (remaining === 0) {
+    countdown.querySelector(".countdown-caption").textContent =
+      "Dočkali jsme se našeho ANO.";
+    countdown.classList.add("is-complete");
+  } else if (!document.hidden) {
+    countdownTimer = setTimeout(
+      updateCountdown,
+      1000 - (Date.now() % 1000) + 10,
+    );
+  }
+}
+updateCountdown();
+document.addEventListener("visibilitychange", updateCountdown);
+window.addEventListener("pageshow", updateCountdown);
+
+// Jedna otevřená odpověď udržuje FAQ kompaktní i ve starších prohlížečích.
+const questions = [...document.querySelectorAll(".faq-list details")];
+questions.forEach((question) =>
+  question.addEventListener("toggle", () => {
+    if (question.open)
+      questions.forEach((other) => {
+        if (other !== question) other.open = false;
+      });
+  }),
+);
+
+// Krátké zatřesení stránky a fajfka, ze které vyroste půllitr.
+const celebration = document.querySelector("#celebration");
+let shakeTimer;
+function closeCelebration() {
+  if (celebration.open) celebration.close();
+}
+celebration
+  .querySelectorAll("button")
+  .forEach((button) => button.addEventListener("click", closeCelebration));
+celebration.addEventListener("click", (event) => {
+  if (event.target !== celebration) return;
+  const bounds = celebration.getBoundingClientRect();
+  if (
+    event.clientX < bounds.left ||
+    event.clientX > bounds.right ||
+    event.clientY < bounds.top ||
+    event.clientY > bounds.bottom
+  )
+    closeCelebration();
+});
+celebration.addEventListener("close", () => {
+  document.body.classList.remove("is-celebrating", "celebration-open");
+  clearTimeout(shakeTimer);
+  document.querySelector("#form-success").focus({ preventScroll: true });
+});
+function celebrate() {
+  // Prohlížeče bez dialogu mají stále plnohodnotné potvrzení ve formuláři.
+  if (typeof celebration.showModal !== "function") return;
+  celebration.showModal();
+  document.body.classList.add("celebration-open");
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.body.classList.add("is-celebrating");
+    shakeTimer = setTimeout(
+      () => document.body.classList.remove("is-celebrating"),
+      450,
+    );
+  }
+}
+
 // Jemné odhalování obsahu respektuje nastavení omezeného pohybu.
 if (
   "IntersectionObserver" in window &&
@@ -216,6 +307,7 @@ form.addEventListener("submit", async (event) => {
       : "Vaše odpověď dorazila. Děkujeme, že jste nám dali vědět. Budete nám chybět!";
     success.hidden = false;
     success.focus();
+    celebrate();
   } catch (error) {
     const messages = {
       limit:

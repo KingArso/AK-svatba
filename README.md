@@ -18,7 +18,7 @@ npm run build     # vytvoří samostatný web ve složce dist/
 npm run preview   # náhled výsledné složky dist/
 ```
 
-Složka `template/` obsahuje nedotčenou původní předlohu. Do `dist/` se nekopíruje. Fotografie v `assets/` jsou optimalizované, správně otočené a zbavené EXIF metadat.
+Do `dist/` se kopírují pouze soubory webu. Při sestavení se výstupní složka vytvoří znovu, takže v ní nezůstávají odstraněné fotografie. Úvodní `assets/photo.webp` je vytvořená z dodané `photo.jpeg` v plném rozlišení 3024 × 4032 px s kvalitou 95. Má správnou orientaci a neobsahuje EXIF metadata; původní varianty `couple.webp` a `couple-small.webp` byly odstraněny.
 
 ## Aktivace přihlášek přes Formspree
 
@@ -34,7 +34,7 @@ Formulář je připravený, ale **dokud není doplněný endpoint, nic neodesíl
 
 Odpovědi zůstávají v přehledu služby; doručování do e-mailu závisí na nastavení a ověření příjemce. Viz [oficiální návod Formspree](https://help.formspree.io/articles/building-your-form/building-an-html-form/).
 
-Formulář sbírá účast / omluvu, jméno a e-mail. Při účasti navíc zobrazí zájem o ubytování a nepovinnou dietu. Vzkaz je nepovinný v obou případech. Každý pozvaný host vyplňuje svou odpověď; formulář nepřidává další doprovod. Zájem o ubytování není potvrzená rezervace.
+Formulář sbírá účast / omluvu, jméno a e-mail. Při účasti je povinná výslovná volba ubytování (včetně „Ubytování nepotřebuji“); údaj o dietě je nepovinný. Při omluvě se na ubytování ani dietu neptá. Vzkaz je nepovinný v obou případech. Každý pozvaný host vyplňuje svou odpověď; formulář nepřidává další doprovod. Zájem o ubytování není potvrzená rezervace.
 
 Odesílání má ochranu proti dvojímu kliknutí, skryté antispamové pole, časový limit a chybové stavy. Potvrzení se zobrazí až po úspěšné HTTP odpovědi Formspree. Při problému se obsah formuláře zachová. Síťová chyba po přijetí přihlášky může znamenat, že opakované odeslání vytvoří duplicitní záznam; v takovém případě zkontrolujte přehled služby. Údaje hostů se neukládají do localStorage ani do repozitáře.
 
@@ -69,8 +69,14 @@ Stažení kalendáře vytvoří soubor `.ics` s obřadem 5. června 2027 ve 14:3
 
 Záměrně nejsou vložené analytické trackery, externí fonty ani automaticky načítaná mapa. Odkaz do map se otevře až po kliknutí. Kresba mlýna je dekorativní ilustrace, nikoli mapa nebo přesný plán areálu.
 
+Odpočet na úvodu používá datum obřadu z `site.config.js`, aktualizuje sekundy a po návratu na kartu se srovná podle aktuálního času zařízení. Po úspěšném odeslání se otevře zavíratelné potvrzení „IN BIRRA VERITAS“ s proměnou fajfky v půllitr. Systémové nastavení omezeného pohybu vypíná třesení a animace. Šipky, hvězdy a srdce jsou SVG ikony, nikoli emoji.
+
+Přesné barvy dress codu jsou uložené v proměnných `--dress-sage`, `--dress-butter`, `--dress-azure` a `--dress-navy` v `styles.css`: `#92966f`, `#FFEFC3`, `#cddfe9`, `#404D77`.
+
 ## Ověření první verze
 
 Prošla kontrola syntaxe, sestavení, místních odkazů, identifikátorů a popisků polí. Místní server vrací HTTP 200. Funkční kontroly v jsdom se simulovanými odpověďmi ověřily úspěšné odeslání, omluvu bez údajů o ubytování a dietě, HTTP 422/429/503, síťovou chybu, zachování údajů, ochranu před dvojím odesláním, validaci prázdného jména, reset, mobilní menu a časy/UTF-8 formát kalendáře. Při testech se žádné odpovědi skutečně neposílaly do Formspree. Testovací nástroje nejsou závislostmi webu.
 
 V prostředí nebyl dostupný prohlížeč. Vizuální kontrola na mobilu a počítači a skutečné doručení z Formspree tedy ještě zbývají.
+
+Při dalších úpravách prošly také kontroly odpočtu, povinné volby ubytování, otevření/zavření potvrzení jen při úspěchu a respektování omezeného pohybu. Kontrola CSS pravidel pro šířky 320, 375, 390, 560, 561, 700, 760 a 850 px ověřila formulář v jednom sloupci, skrytou boční dekoraci a 16px písmo polí. Nejde o test vykreslení; vizuální náhled podle dohody zkontroluje uživatel.
