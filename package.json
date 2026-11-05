@@ -1,0 +1,16 @@
+{
+  "name": "alexandra-a-krystof",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Svatební pozvánka Alexandry a Kryštofa, 5. června 2027",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "check": "node --check app.js && node --check site.config.js && node --check scripts/build.mjs && node --check scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
