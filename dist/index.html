@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f6ef" />
+    <meta
+      name="description"
+      content="Alexandra a Kryštof se berou! Přijďte s námi oslavit náš den 5. června 2027 v Trojanově mlýně. Informace, program a potvrzení účasti."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta
+      property="og:title"
+      content="Alexandra &amp; Kryštof · 5. června 2027"
+    />
+    <meta
+      property="og:description"
+      content="Jeden den, jedno ano a vy všichni, které máme rádi. Potkáme se v Trojanově mlýně."
+    />
+    <title>Alexandra &amp; Kryštof — budeme se brát!</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#obsah">Přejít na obsah</a>
+    <header class="site-header">
+      <a class="monogram" href="#uvod" aria-label="Alexandra a Kryštof, úvod"
+        >a<span>&amp;</span>k<span class="monogram-dot">.</span></a
+      >
+      <nav aria-label="Hlavní navigace" id="navigation">
+        <a href="#misto">Kdy a kde</a>
+        <a href="#program">Náš den</a>
+        <a href="#informace">Dobré vědět</a>
+        <a class="nav-rsvp" href="#rsvp"
+          >Budete u toho? <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navigation"
+        aria-label="Otevřít menu"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <main id="obsah">
+      <section class="hero section-wrap" id="uvod" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="little-star" aria-hidden="true">✳</span> Jedno velké
+            ano
+          </p>
+          <h1 id="hero-title">
+            <span>Alexandra</span
+            ><span class="names-second"><em>&amp;</em> Kryštof</span>
+          </h1>
+          <p class="hero-intro">
+            Budeme se brát.<br />A nejraději to oslavíme s vámi.
+          </p>
+          <div class="hero-details">
+            <p>Sobota <strong>5. června 2027</strong></p>
+            <span aria-hidden="true">/</span>
+            <p><strong>Trojanův mlýn</strong> Praha–Suchdol</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#rsvp"
+              >Potvrdit účast <span aria-hidden="true">↗</span></a
+            ><a class="text-link calendar-link" href="#misto" data-calendar
+              >Uložit datum <span aria-hidden="true">↓</span></a
+            >
+          </div>
+          <p class="hero-footnote">Máme místo. Máme datum. Teď už jen vás.</p>
+        </div>
+        <div class="hero-visual">
+          <div class="photo-frame">
+            <img
+              src="./assets/couple.webp"
+              srcset="
+                ./assets/couple-small.webp  650w,
+                ./assets/couple.webp       1200w
+              "
+              sizes="(max-width: 700px) 85vw, 43vw"
+              width="1200"
+              height="1600"
+              alt="Alexandra a Kryštof společně před dřevěnými plážovými domky"
+              fetchpriority="high"
+            /><span class="photo-caption">my dva. a brzy i naše ano.</span>
+          </div>
+          <div class="date-sticker" aria-label="5. 6. 2027">
+            <span>zapište si</span><strong>5 / 6</strong><span>2027</span
+            ><svg viewBox="0 0 80 16" aria-hidden="true">
+              <path d="M2 9Q20 0 40 8T78 7" />
+            </svg>
+          </div>
+          <span class="photo-side" aria-hidden="true"
+            >SPOLU JE TO NEJHEZČÍ.</span
+          >
+          <svg
+            class="hero-spark"
+            viewBox="0 0 80 90"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M37 75Q44 38 29 10M37 58Q17 61 10 44Q31 42 37 58ZM39 39Q58 42 66 22Q45 20 39 39ZM34 23Q16 23 15 8Q31 9 34 23ZM40 76Q62 74 67 55Q47 54 40 76Z"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <div class="date-ribbon" aria-label="Datum a místo svatby">
+        <span>5. června 2027</span><span aria-hidden="true">✳</span
+        ><span>Trojanův mlýn</span><span aria-hidden="true">✳</span
+        ><span>Alexandra &amp; Kryštof</span><span aria-hidden="true">✳</span
+        ><span>Budeme svoji</span><span aria-hidden="true">✳</span>
+      </div>
+
+      <section class="invitation section-wrap reveal" aria-label="Naše pozvání">
+        <p class="eyebrow">Naši milí,</p>
+        <h2>
+          Některé dny jsou výjimečné.<br /><em>Ten náš bude i díky vám.</em>
+        </h2>
+        <p>
+          Čeká nás den plný objetí, dobrého jídla, tance a společných vzpomínek.
+          A protože k tomu patříte i vy, srdečně vás zveme na naši svatbu.
+        </p>
+        <span class="drawn-heart" aria-hidden="true">♡</span>
+      </section>
+
+      <section class="venue" id="misto" aria-labelledby="venue-title">
+        <div class="section-wrap venue-grid">
+          <div class="venue-copy reveal">
+            <p class="eyebrow">01 / Kdy &amp; kde</p>
+            <h2 id="venue-title">Jeden mlýn.<br /><em>Celý náš den.</em></h2>
+            <p>
+              Od prvního „ano“ až po poslední tanec. Všechno oslavíme na jednom
+              místě, v Trojanově mlýně v pražském Suchdole.
+            </p>
+            <div class="venue-facts">
+              <div>
+                <span class="detail-label">Kdy se potkáme</span
+                ><strong>5. června 2027</strong
+                ><span>Příjezd od 13:00 · obřad ve 14:30</span>
+              </div>
+              <div>
+                <span class="detail-label">Obřad i hostina</span
+                ><strong>Trojanův mlýn</strong><span>Praha–Suchdol</span>
+              </div>
+            </div>
+            <a
+              class="button button-outline"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Trojan%C5%AFv+ml%C3%BDn+Praha+Suchdol"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Jak se tam dostanete <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="venue-art reveal">
+            <div class="venue-art-top">
+              <span>MÍSTO, KDE SI ŘEKNEME</span><span>ANO.</span>
+            </div>
+            <svg
+              class="mill-illustration"
+              viewBox="0 0 560 390"
+              fill="none"
+              role="img"
+              aria-label="Dekorativní kresba mlýna s vodním kolem, stromy a potokem"
+            >
+              <g
+                stroke="#64745e"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path fill="#f8f6ef" d="M140 171L285 81L433 171V291H140Z" />
+                <path
+                  fill="#b7c4b0"
+                  d="M120 173L285 66L452 173L433 181L285 86L140 181Z"
+                />
+                <path
+                  d="M284 86V291M151 191H420M152 282H421M184 107V76H205V95"
+                />
+                <path
+                  fill="#dce6e7"
+                  d="M182 211H215V251H182ZM244 211H269V251H244ZM310 211H343V251H310ZM369 211H402V251H369ZM270 130H301V167H270Z"
+                />
+                <path
+                  d="M198 212V251M183 231H215M326 212V251M310 231H343M385 212V251M370 231H402M285 131V167M271 149H301"
+                />
+                <path fill="#eee4bd" d="M232 291V265Q251 244 270 265V291Z" />
+                <path
+                  d="M251 259V290M260 275H262M128 294H447M91 302Q157 297 213 305M314 308Q390 300 479 309"
+                />
+                <circle cx="397" cy="271" r="50" fill="#f1ebd5" />
+                <circle cx="397" cy="271" r="41" />
+                <circle cx="397" cy="271" r="7" fill="#64745e" />
+                <path
+                  d="M397 222V264M397 279V321M347 271H389M405 271H447M362 236L392 266M402 276L432 306M432 236L402 266M391 277L362 306"
+                />
+                <path
+                  stroke="#8caaa9"
+                  d="M26 333Q99 309 168 330T311 333T470 332T548 322M18 346Q100 323 175 345T319 346T474 345M97 357Q146 349 203 362T345 359T503 359M293 324Q326 313 353 324M414 322L429 329M427 319L441 326"
+                />
+                <path
+                  d="M71 297V182M71 236Q28 238 35 206Q10 172 39 158Q31 128 64 129Q86 107 104 135Q139 137 126 169Q148 197 112 211Q118 241 71 236ZM491 298V207M491 251Q462 256 458 232Q435 211 456 193Q450 168 476 166Q498 147 511 172Q542 177 528 203Q548 230 522 238Q520 255 491 251"
+                  fill="#dce4d3"
+                />
+                <path
+                  d="M71 216L53 192M72 203L91 176M491 232L509 210M490 220L478 200M54 298L64 292M84 298L91 291M469 298L478 291M511 299L518 291"
+                />
+                <path
+                  d="M170 63Q177 55 185 63M188 48Q198 40 207 48M348 62Q357 53 366 61"
+                />
+              </g>
+              <path
+                d="M80 317Q265 292 460 319"
+                stroke="#64745e"
+                stroke-width="1.2"
+                stroke-dasharray="2 7"
+              />
+            </svg>
+            <p class="venue-script">Tady začne naše napořád.</p>
+            <span class="venue-coordinate">TROJANŮV MLÝN · PRAHA–SUCHDOL</span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="schedule section-wrap"
+        id="program"
+        aria-labelledby="schedule-title"
+      >
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">02 / Náš den</p>
+            <h2 id="schedule-title">Od „ahoj“ <em>do noci.</em></h2>
+          </div>
+          <p>
+            Rámcový plán našeho dne.<br />Na radost a spontánní chvíle máme času
+            dost.
+          </p>
+        </div>
+        <ol class="timeline">
+          <li class="reveal">
+            <time>13:00</time><span class="timeline-dot"></span>
+            <div>
+              <h3>Vítejte u mlýna</h3>
+              <p>Příjezd hostů, první objetí a čas se rozkoukat.</p>
+            </div>
+            <span class="timeline-number" aria-hidden="true">01</span>
+          </li>
+          <li class="ceremony reveal">
+            <time>14:30</time><span class="timeline-dot"></span>
+            <div>
+              <span class="tiny-label">Ta nejdůležitější chvíle</span>
+              <h3>Řekneme si ano</h3>
+              <p>Náš svatební obřad. Kapesníčky s sebou.</p>
+            </div>
+            <span class="ceremony-heart" aria-hidden="true">♡</span>
+          </li>
+          <li class="reveal">
+            <time>15:00</time><span class="timeline-dot"></span>
+            <div>
+              <h3>Úsměv, prosím</h3>
+              <p>Společné focení na památku.</p>
+            </div>
+            <span class="timeline-number" aria-hidden="true">03</span>
+          </li>
+          <li class="reveal">
+            <time>16:00</time><span class="timeline-dot"></span>
+            <div>
+              <h3>Ke stolu!</h3>
+              <p>Začíná raut. Na hlad ani žízeň nebude prostor.</p>
+            </div>
+            <span class="timeline-number" aria-hidden="true">04</span>
+          </li>
+          <li class="reveal">
+            <time>17:00</time><span class="timeline-dot"></span>
+            <div>
+              <h3>Sladká tečka</h3>
+              <p>Krájení svatebního dortu.</p>
+            </div>
+            <span class="timeline-number" aria-hidden="true">05</span>
+          </li>
+          <li class="reveal">
+            <time>18:00</time><span class="timeline-dot"></span>
+            <div>
+              <h3>Parket je náš. A váš.</h3>
+              <p>Náš první tanec a pak už společně.</p>
+            </div>
+            <span class="timeline-number" aria-hidden="true">06</span>
+          </li>
+          <li class="reveal">
+            <time>20:00</time><span class="timeline-dot"></span>
+            <div>
+              <h3>Ať tahle noc nekončí</h3>
+              <p>Volná zábava, tanec a všechno, co k tomu patří.</p>
+            </div>
+            <span class="timeline-number" aria-hidden="true">07</span>
+          </li>
+          <li class="reveal">
+            <time>01:30</time><span class="timeline-dot"></span>
+            <div>
+              <h3>Ještě jednu na rozloučenou?</h3>
+              <p>Předpokládaný konec naší oslavy.</p>
+            </div>
+            <span class="timeline-number" aria-hidden="true">08</span>
+          </li>
+        </ol>
+      </section>
+
+      <section
+        class="practical"
+        id="informace"
+        aria-labelledby="practical-title"
+      >
+        <div class="section-wrap">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">03 / Dobré vědět</p>
+              <h2 id="practical-title">Ať si to <em>užijete.</em></h2>
+            </div>
+            <p>
+              Pár drobností, které se hodí vědět<br />ještě předtím, než
+              vyrazíte.
+            </p>
+          </div>
+          <div class="practical-grid">
+            <article class="info-block reveal">
+              <span class="info-index">01 — NA CESTU</span>
+              <h3>Všemi cestami<br />k mlýnu.</h3>
+              <p>
+                Autem dojedete až ke mlýnu, kde je pro hosty připravené
+                parkování.
+              </p>
+              <p>
+                Autobusem se dostanete do Suchdola a dál můžete dojít pěšky. Po
+                domluvě bude k dispozici také řidič, který vás vyzvedne.
+              </p>
+              <a
+                class="text-link"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Trojan%C5%AFv+ml%C3%BDn+Praha+Suchdol"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Otevřít navigaci <span aria-hidden="true">↗</span></a
+              >
+            </article>
+            <article class="info-block reveal">
+              <span class="info-index">02 — NA DOBROU NOC</span>
+              <h3>Nikam<br />nespěchejte.</h3>
+              <p>
+                Po předchozí domluvě vám můžeme zajistit ubytování v penzionu U
+                Lasíků. Pro dobrodružnější povahy bude místo i na vlastní stan.
+              </p>
+              <p>
+                Zájem o ubytování nám napište do přihlášky. Podrobnosti
+                domluvíme společně.
+              </p>
+              <a class="text-link" href="#rsvp"
+                >Dát vědět o ubytování <span aria-hidden="true">↗</span></a
+              >
+            </article>
+            <article class="info-block gifts-block reveal">
+              <span class="info-index">03 — PRO RADOST</span>
+              <h3>Nejhezčí dárek?<br />Že přijedete.</h3>
+              <p>
+                Máme vše, co potřebujeme. Největší radost nám udělá, když náš
+                den oslavíte s námi.
+              </p>
+              <p>
+                Pokud byste nás přesto chtěli obdarovat, potěší nás příspěvek na
+                naše společné plány. Věcné dary prosím nechte doma.
+              </p>
+              <svg
+                class="gift-flower"
+                viewBox="0 0 100 100"
+                fill="none"
+                aria-hidden="true"
+              >
+                <g stroke="currentColor" stroke-width="1.3">
+                  <path
+                    d="M51 92Q57 62 48 41M53 74Q27 77 26 58Q46 55 53 74ZM54 63Q76 65 81 46Q61 44 54 63Z"
+                  />
+                  <path
+                    d="M48 41Q25 53 25 34Q8 22 28 15Q33-3 47 10Q65-2 68 17Q88 28 69 37Q68 55 48 41Z"
+                  />
+                  <circle cx="48" cy="26" r="8" />
+                </g>
+              </svg>
+            </article>
+          </div>
+          <div class="dress-code reveal">
+            <div>
+              <p class="eyebrow">Malá barevná nápověda</p>
+              <h3>Sluší nám to <em>společně.</em></h3>
+              <p>
+                Budeme rádi, když se při výběru oblečení naladíte na barvy naší
+                svatby.
+              </p>
+            </div>
+            <div class="palette" aria-label="Barevná paleta dress codu">
+              <div><span class="swatch sage"></span><span>Šalvějová</span></div>
+              <div><span class="swatch butter"></span><span>Máslová</span></div>
+              <div>
+                <span class="swatch azure"></span><span>Světle modrá</span>
+              </div>
+              <div>
+                <span class="swatch navy"></span><span>Tmavě modrá</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section section-wrap" aria-labelledby="faq-title">
+        <div class="faq-intro reveal">
+          <p class="eyebrow">Ještě maličkost</p>
+          <h2 id="faq-title">Možná vás<br /><em>napadá…</em></h2>
+          <p>A pokud ještě něco chybí, ozvěte se nám nebo našim nejbližším.</p>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>
+              Mohu přivést doprovod?<span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              Pozvánky jsou na jméno. Prosíme, přijďte ve složení, ve kterém
+              jsme vás pozvali. Děkujeme za pochopení.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Je na místě parkování?<span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              Ano, parkování je zajištěné přímo u mlýna. Autem se dostanete až
+              na místo.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Můžeme vzít i svého mazlíčka?<span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              Po předchozí domluvě ano. Dejte nám o něm prosím vědět, ať se na
+              všechny hosty dobře připravíme.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Co když mám alergii nebo speciální dietu?<span aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              Napište nám své potřeby do přihlašovacího formuláře. Pomůže nám to
+              připravit občerstvení i pro vás.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Jak je to s ubytováním?<span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              Ubytování v penzionu U Lasíků je potřeba domluvit předem. V
+              přihlášce nám dejte vědět o svém zájmu; samotná přihláška ještě
+              není potvrzená rezervace. Na místě bude možné postavit vlastní
+              stan.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-title">
+        <div class="section-wrap rsvp-grid">
+          <div class="rsvp-copy reveal">
+            <p class="eyebrow">04 / Těšíme se na vás</p>
+            <h2 id="rsvp-title">Tak co,<br /><em>budete u toho?</em></h2>
+            <p>
+              Dejte nám vědět, jestli náš den oslavíte s námi. Ať pro vás můžeme
+              všechno připravit.
+            </p>
+            <p class="rsvp-deadline" hidden></p>
+            <div class="rsvp-flower" aria-hidden="true">
+              <svg viewBox="0 0 170 190" fill="none">
+                <g stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M82 179Q89 125 75 66M86 142Q48 150 39 118Q67 110 86 142ZM85 116Q120 126 134 93Q103 87 85 116ZM80 91Q49 101 39 80Q59 68 80 91Z"
+                  />
+                  <path
+                    d="M75 66Q43 86 39 59Q14 46 36 28Q31 0 59 9Q78-12 92 11Q122 4 119 31Q144 53 118 65Q109 88 86 68Z"
+                    fill="#e5e9d8"
+                  />
+                  <circle cx="78" cy="41" r="16" fill="#efe2a9" />
+                  <path d="M74 28L81 54M66 38L91 45M67 48L88 32" />
+                </g></svg
+              ><span>Bez vás by to<br />nebylo ono.</span>
+            </div>
+          </div>
+          <div class="form-panel reveal">
+            <form id="rsvp-form" method="post">
+              <div class="form-heading">
+                <span class="tiny-label">Vaše odpověď</span
+                ><span aria-hidden="true">↗</span>
+              </div>
+              <fieldset class="attendance-field">
+                <legend>
+                  Přijmete naše pozvání?
+                  <span class="required-mark" aria-hidden="true">*</span>
+                </legend>
+                <div class="attendance-options">
+                  <label
+                    ><input
+                      type="radio"
+                      name="attendance"
+                      value="Ano, přijdu"
+                      required
+                    /><span
+                      ><span aria-hidden="true">♡</span> Ano, těším se!</span
+                    ></label
+                  ><label
+                    ><input
+                      type="radio"
+                      name="attendance"
+                      value="Ne, nemohu přijít"
+                      required
+                    /><span>Mrzí mě to, nemohu</span></label
+                  >
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="guest-name"
+                  >Jméno a příjmení
+                  <span class="required-mark" aria-hidden="true">*</span></label
+                ><input
+                  id="guest-name"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Jak se jmenujete?"
+                  maxlength="160"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="guest-email"
+                  >E-mail
+                  <span class="required-mark" aria-hidden="true">*</span></label
+                ><input
+                  id="guest-email"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="vas@email.cz"
+                  maxlength="254"
+                  required
+                /><span class="field-hint"
+                  >Ať se vám můžeme ozvat s podrobnostmi.</span
+                >
+              </div>
+              <fieldset id="attendance-details" hidden disabled>
+                <legend class="sr-only">Podrobnosti k účasti</legend>
+                <div class="field">
+                  <label for="accommodation">Budete chtít přespat?</label
+                  ><select id="accommodation" name="accommodation">
+                    <option value="Ubytování nepotřebuji">
+                      Ubytování nepotřebuji
+                    </option>
+                    <option value="Mám zájem o penzion U Lasíků">
+                      Mám zájem o penzion U Lasíků
+                    </option>
+                    <option value="Přivezu si vlastní stan">
+                      Přivezu si vlastní stan
+                    </option>
+                    <option value="Ještě nevím, domluvíme se">
+                      Ještě nevím, domluvíme se
+                    </option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="dietary"
+                    >Jídlo, alergie a diety
+                    <span class="optional">/ nepovinné</span></label
+                  ><input
+                    id="dietary"
+                    name="dietary"
+                    placeholder="Např. vegetariánské jídlo, bez lepku…"
+                    maxlength="1000"
+                  />
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="guest-message"
+                  >Něco nám vzkážete?
+                  <span class="optional">/ nepovinné</span></label
+                ><textarea
+                  id="guest-message"
+                  name="message"
+                  rows="3"
+                  placeholder="Tady je místo pro váš vzkaz…"
+                  maxlength="3000"
+                ></textarea>
+              </div>
+              <div class="honeypot" aria-hidden="true">
+                <label for="website">Toto pole nevyplňujte</label
+                ><input
+                  id="website"
+                  name="_gotcha"
+                  tabindex="-1"
+                  autocomplete="off"
+                  disabled
+                />
+              </div>
+              <p class="form-setup-note" id="form-setup-note">
+                Přihlašování brzy otevřeme. Zatím si můžete prohlédnout, na co
+                se vás budeme ptát.
+              </p>
+              <button
+                class="button button-dark submit-button"
+                type="submit"
+                disabled
+              >
+                <span>Přihlašování brzy otevřeme</span
+                ><span aria-hidden="true">↗</span>
+              </button>
+              <p
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+                tabindex="-1"
+              ></p>
+              <p class="form-privacy">
+                Pole označená * jsou povinná. Údaje použijeme k organizaci
+                svatby; odpověď zpracuje služba
+                <a
+                  href="https://formspree.io/legal/privacy-policy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Formspree</a
+                >. Do nepovinných polí napište jen to, co nám chcete sdělit.
+              </p>
+            </form>
+            <noscript
+              ><p class="form-setup-note">
+                Pro vyplnění formuláře prosím zapněte JavaScript, nebo
+                kontaktujte naše nejbližší níže.
+              </p></noscript
+            >
+            <div class="form-success" id="form-success" hidden tabindex="-1">
+              <span class="success-mark" aria-hidden="true">♡</span>
+              <p class="eyebrow">Máme vaši odpověď</p>
+              <h3>Děkujeme!</h3>
+              <p id="success-message"></p>
+              <button class="text-link" type="button" id="another-response">
+                Vyplnit další odpověď <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacts section-wrap" aria-labelledby="contacts-title">
+        <div class="contacts-heading">
+          <p class="eyebrow">Naši nejbližší na drátě</p>
+          <h2 id="contacts-title">Když budete <em>něco potřebovat.</em></h2>
+        </div>
+        <div class="contacts-grid">
+          <div>
+            <span class="detail-label">Svědek</span>
+            <h3>Jakub Křička</h3>
+            <a href="tel:+420739303959"
+              >+420 739 303 959 <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div>
+            <span class="detail-label">Svědkyně</span>
+            <h3>Mária Říhová</h3>
+            <a href="tel:+420733199378"
+              >+420 733 199 378 <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div>
+            <span class="detail-label">Maminka nevěsty</span>
+            <h3>Šárka Bauerová</h3>
+            <a href="tel:+420777313064"
+              >+420 777 313 064 <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="monogram" href="#uvod" aria-label="Zpět na začátek"
+        >a<span>&amp;</span>k<span class="monogram-dot">.</span></a
+      >
+      <p>5. června 2027 <span aria-hidden="true">·</span> Trojanův mlýn</p>
+      <span class="footer-love">Těšíme se na vás. ♡</span>
+    </footer>
+  </body>
+</html>
